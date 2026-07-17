@@ -159,17 +159,17 @@ All tunable behavior lives as named constants at the top of `main.py` — no nee
 ## Project Structure
 
 ```
-Virtual_Mouse/
-├── main.py                     # App entry point: video loop, gesture dispatch, OS control, overlay
-├── util.py                     # Pure helper functions: angles, distances, interpolation, EMA smoothing
-├── requirements.txt            # Python dependencies
-├── README.md                   # This file
-├── images/
-│   ├── title_image.png         # Title banner
-│   ├── system_architecutre.png # System architecture / pipeline diagram
-│   └── gesture-guide.png       # Reference image for the Gesture Guide section
-└── docs/
-    └── Project_Report.docx     # Full project report
+AI-Virtual_Mouse/
+  ├── main.py                     # App entry point: video loop, gesture dispatch, OS control, overlay
+  ├── util.py                     # Pure helper functions: angles, distances, interpolation, EMA smoothing
+  ├── requirements.txt            # Python dependencies
+  ├── README.md                   # This file
+  ├── images/
+  │     ├── title_image.png         # Title banner
+  │     ├── system_architecutre.png # System architecture / pipeline diagram
+  │     └── gesture-guide.png       # Reference image for the Gesture Guide section
+  └── docs/
+        └── Project_Report.docx     # Full project report
 ```
 
 `util.py` has no dependency on OpenCV, MediaPipe, or OS-control libraries, so its functions can be unit-tested in isolation.
