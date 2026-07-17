@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="AI Virtual Mouse banner" src="images/banner.png" width="100%">
+</p>
+
 # AI Virtual Mouse
 
 Control your computer's cursor with nothing but your hand and a webcam. AI Virtual Mouse uses [MediaPipe Hands](https://developers.google.com/mediapipe) and OpenCV to track your hand in real time and translate a small vocabulary of gestures into full mouse functionality — movement, left/right click, double click, drag-and-drop, scrolling, and screenshots.
@@ -47,6 +51,11 @@ Control your computer's cursor with nothing but your hand and a webcam. AI Virtu
 ```
 Webcam → MediaPipe Hand Detection → 21-Point Landmarks → Gesture Classification → Action Dispatch → OS Mouse Control
 ```
+
+<p align="center">
+  <img alt="Working structure / system architecture" src="images/working-structure.png" width="85%">
+</p>
+<p align="center"><em>Figure — End-to-end working structure of the AI Virtual Mouse pipeline.</em></p>
 
 1. **Capture** — OpenCV reads frames from your webcam and mirrors them for a natural, "look in a mirror" experience.
 2. **Detect** — MediaPipe Hands locates a hand in the frame and returns 21 normalized landmark coordinates.
@@ -146,9 +155,13 @@ All tunable behavior lives as named constants at the top of `main.py` — no nee
 
 ```
 Virtual_Mouse/
-├── main.py            # App entry point: video loop, gesture dispatch, OS control, overlay
-├── util.py             # Pure helper functions: angles, distances, interpolation, EMA smoothing
-└── requirements.txt    # Python dependencies
+├── main.py               # App entry point: video loop, gesture dispatch, OS control, overlay
+├── util.py               # Pure helper functions: angles, distances, interpolation, EMA smoothing
+├── requirements.txt      # Python dependencies
+├── README.md             # This file
+└── images/
+    ├── banner.png            # Title banner
+    └── working-structure.png # System architecture / pipeline diagram
 ```
 
 `util.py` has no dependency on OpenCV, MediaPipe, or OS-control libraries, so its functions can be unit-tested in isolation.
