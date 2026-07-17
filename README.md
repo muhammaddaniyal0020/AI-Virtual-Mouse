@@ -65,17 +65,19 @@ Webcam → MediaPipe Hand Detection → 21-Point Landmarks → Gesture Classific
 
 ## Gesture Guide
 
-| Gesture | Hand Pose | Action |
-|---|---|---|
-| **Move** | Index finger extended, thumb resting near the base of the index finger | Cursor follows your fingertip |
-| **Left Click** | Index finger bent, middle finger straight | Single left click |
-| **Right Click** | Middle finger bent, index finger straight | Single right click |
-| **Double Click** | Both index and middle fingers bent | OS double-click |
-| **Drag & Drop** | Pinch thumb tip and index tip together, move, then release | Holds left button while pinched, releases on open |
-| **Scroll Up / Down** | Index, middle, and ring fingers extended; pinky curled — move hand up or down | Scrolls the active window |
-| **Screenshot** | Index and middle fingers bent, thumb close to the base of the index finger | Saves a timestamped screenshot |
+| Gesture | Preview | Hand Pose | Action |
+|---|---|---|---|
+| **Move** | <img src="images/gestures/move.png" width="120"> | Index finger extended, thumb resting near the base of the index finger | Cursor follows your fingertip |
+| **Left Click** | <img src="images/gestures/left-click.png" width="120"> | Index finger bent, middle finger straight | Single left click |
+| **Right Click** | <img src="images/gestures/right-click.png" width="120"> | Middle finger bent, index finger straight | Single right click |
+| **Double Click** | <img src="images/gestures/double-click.png" width="120"> | Both index and middle fingers bent | OS double-click |
+| **Drag & Drop** | <img src="images/gestures/drag-drop.png" width="120"> | Pinch thumb tip and index tip together, move, then release | Holds left button while pinched, releases on open |
+| **Scroll Up / Down** | <img src="images/gestures/scroll.png" width="120"> | Index, middle, and ring fingers extended; pinky curled — move hand up or down | Scrolls the active window |
+| **Screenshot** | <img src="images/gestures/screenshot.png" width="120"> | Index and middle fingers bent, thumb close to the base of the index finger | Saves a timestamped screenshot |
 
 > 💡 Tip: Keep gestures deliberate and hold them briefly — this gives MediaPipe a stable frame to classify and avoids accidental misfires.
+>
+> 📷 Add your own reference photos or landmark screenshots to `images/gestures/` using the filenames above — they'll render automatically in the table.
 
 ## Demo Overlay
 
@@ -161,7 +163,15 @@ Virtual_Mouse/
 ├── README.md             # This file
 └── images/
     ├── banner.png            # Title banner
-    └── working-structure.png # System architecture / pipeline diagram
+    ├── working-structure.png # System architecture / pipeline diagram
+    └── gestures/              # Gesture preview images used in the Gesture Guide table
+        ├── move.png
+        ├── left-click.png
+        ├── right-click.png
+        ├── double-click.png
+        ├── drag-drop.png
+        ├── scroll.png
+        └── screenshot.png
 ```
 
 `util.py` has no dependency on OpenCV, MediaPipe, or OS-control libraries, so its functions can be unit-tested in isolation.
